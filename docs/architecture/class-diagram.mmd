@@ -1,0 +1,39 @@
+classDiagram
+  class GaussianJump {
+    +from_params()
+    +log_mgf()
+    +grad_log_mgf()
+    +rate_I()
+    +argmax_lambda_for_v()
+    +sample_nominal()
+    +sample_tilted()
+  }
+
+  class OffspringLaw {
+    +from_pmf()
+    +sample()
+    +log_extinction_rate_gamma()
+    +f()
+  }
+
+  class BRWSpeed {
+    +for_gaussian_along_u()
+  }
+
+  class BRWSimulator {
+    +simulate_until()
+  }
+
+  class SpineISConfig {
+  }
+
+  class SpineISEstimator {
+    +u
+    +_speed
+    +lam_hat
+    +rng
+    +_sb_cum
+    +estimate_cdf()
+    +estimate_window_pmf()
+  }
+
