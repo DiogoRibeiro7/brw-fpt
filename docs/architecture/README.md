@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-- **Python Files:** 7
+- **Python Files:** 9
 - **Test Files:** 5
 - **Frameworks:** None detected
 
@@ -28,6 +28,7 @@ Main directories:
 - `docs/`
 - `architecture/`
 - `paper/`
+- `scripts/`
 - `src/`
 - `brwfpt/`
 - `tests/`
