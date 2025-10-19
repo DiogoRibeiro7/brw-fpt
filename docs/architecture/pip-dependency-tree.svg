@@ -273,7 +273,7 @@
 <title>cryptography</title>
 <ellipse fill="none" stroke="black" cx="1419.84" cy="-236.35" rx="79.81" ry="26.74"/>
 <text text-anchor="middle" x="1419.84" y="-240.15" font-family="Times,serif" font-size="14.00">cryptography</text>
-<text text-anchor="middle" x="1419.84" y="-225.15" font-family="Times,serif" font-size="14.00">46.0.2</text>
+<text text-anchor="middle" x="1419.84" y="-225.15" font-family="Times,serif" font-size="14.00">46.0.3</text>
 </g>
 <!-- cryptography&#45;&gt;cffi -->
 <g id="edge11" class="edge">
@@ -301,7 +301,7 @@
 <title>dulwich</title>
 <ellipse fill="none" stroke="black" cx="1073.84" cy="-341.09" rx="50.82" ry="26.74"/>
 <text text-anchor="middle" x="1073.84" y="-344.89" font-family="Times,serif" font-size="14.00">dulwich</text>
-<text text-anchor="middle" x="1073.84" y="-329.89" font-family="Times,serif" font-size="14.00">0.24.4</text>
+<text text-anchor="middle" x="1073.84" y="-329.89" font-family="Times,serif" font-size="14.00">0.24.5</text>
 </g>
 <!-- dulwich&#45;&gt;typing&#45;extensions -->
 <g id="edge13" class="edge">
@@ -511,7 +511,7 @@
 <title>iniconfig</title>
 <ellipse fill="none" stroke="black" cx="4924.84" cy="-341.09" rx="54.39" ry="26.74"/>
 <text text-anchor="middle" x="4924.84" y="-344.89" font-family="Times,serif" font-size="14.00">iniconfig</text>
-<text text-anchor="middle" x="4924.84" y="-329.89" font-family="Times,serif" font-size="14.00">2.1.0</text>
+<text text-anchor="middle" x="4924.84" y="-329.89" font-family="Times,serif" font-size="14.00">2.3.0</text>
 </g>
 <!-- installer -->
 <g id="node43" class="node">
@@ -1105,7 +1105,7 @@
 <title>setuptools</title>
 <ellipse fill="none" stroke="black" cx="5922.84" cy="-550.57" rx="64.19" ry="26.74"/>
 <text text-anchor="middle" x="5922.84" y="-554.37" font-family="Times,serif" font-size="14.00">setuptools</text>
-<text text-anchor="middle" x="5922.84" y="-539.37" font-family="Times,serif" font-size="14.00">65.5.0</text>
+<text text-anchor="middle" x="5922.84" y="-539.37" font-family="Times,serif" font-size="14.00">79.0.1</text>
 </g>
 <!-- zstandard -->
 <g id="node76" class="node">
