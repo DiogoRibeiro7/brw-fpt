@@ -301,7 +301,7 @@
 <title>dulwich</title>
 <ellipse fill="none" stroke="black" cx="1073.84" cy="-341.09" rx="50.82" ry="26.74"/>
 <text text-anchor="middle" x="1073.84" y="-344.89" font-family="Times,serif" font-size="14.00">dulwich</text>
-<text text-anchor="middle" x="1073.84" y="-329.89" font-family="Times,serif" font-size="14.00">0.24.5</text>
+<text text-anchor="middle" x="1073.84" y="-329.89" font-family="Times,serif" font-size="14.00">0.24.7</text>
 </g>
 <!-- dulwich&#45;&gt;typing&#45;extensions -->
 <g id="edge13" class="edge">
@@ -699,7 +699,7 @@
 <title>pip</title>
 <ellipse fill="none" stroke="black" cx="5535.84" cy="-550.57" rx="33.88" ry="26.74"/>
 <text text-anchor="middle" x="5535.84" y="-554.37" font-family="Times,serif" font-size="14.00">pip</text>
-<text text-anchor="middle" x="5535.84" y="-539.37" font-family="Times,serif" font-size="14.00">25.2</text>
+<text text-anchor="middle" x="5535.84" y="-539.37" font-family="Times,serif" font-size="14.00">25.3</text>
 </g>
 <!-- pipdeptree -->
 <g id="node58" class="node">
@@ -951,7 +951,7 @@
 <title>stdlib&#45;list</title>
 <ellipse fill="none" stroke="black" cx="5789.84" cy="-445.83" rx="59.29" ry="26.74"/>
 <text text-anchor="middle" x="5789.84" y="-449.63" font-family="Times,serif" font-size="14.00">stdlib&#45;list</text>
-<text text-anchor="middle" x="5789.84" y="-434.63" font-family="Times,serif" font-size="14.00">0.11.1</text>
+<text text-anchor="middle" x="5789.84" y="-434.63" font-family="Times,serif" font-size="14.00">0.12.0</text>
 </g>
 <!-- pydeps&#45;&gt;stdlib&#45;list -->
 <g id="edge55" class="edge">
@@ -1105,7 +1105,7 @@
 <title>setuptools</title>
 <ellipse fill="none" stroke="black" cx="5922.84" cy="-550.57" rx="64.19" ry="26.74"/>
 <text text-anchor="middle" x="5922.84" y="-554.37" font-family="Times,serif" font-size="14.00">setuptools</text>
-<text text-anchor="middle" x="5922.84" y="-539.37" font-family="Times,serif" font-size="14.00">79.0.1</text>
+<text text-anchor="middle" x="5922.84" y="-539.37" font-family="Times,serif" font-size="14.00">65.5.0</text>
 </g>
 <!-- zstandard -->
 <g id="node76" class="node">
