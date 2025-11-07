@@ -2,7 +2,7 @@ name: Performance Regression Detector
 
 on:
   pull_request:
-    branches: [main, master, develop]
+    branches: [main, develop]
   workflow_dispatch:
 
 permissions:
