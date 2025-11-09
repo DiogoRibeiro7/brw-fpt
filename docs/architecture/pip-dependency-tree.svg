@@ -266,7 +266,7 @@
 <title>coverage</title>
 <ellipse fill="none" stroke="black" cx="5014.84" cy="-445.83" rx="57.05" ry="26.74"/>
 <text text-anchor="middle" x="5014.84" y="-449.63" font-family="Times,serif" font-size="14.00">coverage</text>
-<text text-anchor="middle" x="5014.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.11.0</text>
+<text text-anchor="middle" x="5014.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.11.2</text>
 </g>
 <!-- cryptography -->
 <g id="node23" class="node">
@@ -1021,21 +1021,21 @@
 <title>pytest</title>
 <ellipse fill="none" stroke="black" cx="4895.84" cy="-445.83" rx="43.68" ry="26.74"/>
 <text text-anchor="middle" x="4895.84" y="-449.63" font-family="Times,serif" font-size="14.00">pytest</text>
-<text text-anchor="middle" x="4895.84" y="-434.63" font-family="Times,serif" font-size="14.00">8.4.2</text>
+<text text-anchor="middle" x="4895.84" y="-434.63" font-family="Times,serif" font-size="14.00">9.0.0</text>
 </g>
 <!-- pytest&#45;&gt;packaging -->
 <g id="edge63" class="edge">
 <title>pytest&#45;&gt;packaging</title>
 <path fill="none" stroke="black" d="M4863.18,-427.63C4855.1,-424.12 4846.33,-420.91 4837.84,-418.96 4716.06,-390.99 4393.21,-443.82 4275.84,-400.96 4265.73,-397.27 4266.97,-389.58 4256.84,-385.96 4201.68,-366.28 3261.37,-370.11 3202.84,-367.96 3065.94,-362.94 2906.29,-353.02 2815.93,-347.03"/>
 <polygon fill="black" stroke="black" points="2816.01,-343.53 2805.8,-346.36 2815.54,-350.51 2816.01,-343.53"/>
-<text text-anchor="middle" x="4297.34" y="-389.76" font-family="Times,serif" font-size="14.00">&gt;=20</text>
+<text text-anchor="middle" x="4297.34" y="-389.76" font-family="Times,serif" font-size="14.00">&gt;=22</text>
 </g>
 <!-- pytest&#45;&gt;iniconfig -->
 <g id="edge62" class="edge">
 <title>pytest&#45;&gt;iniconfig</title>
 <path fill="none" stroke="black" d="M4900.13,-418.9C4902.18,-406.49 4904.68,-391.43 4906.91,-377.94"/>
 <polygon fill="black" stroke="black" points="4910.37,-378.45 4908.55,-368.01 4903.47,-377.3 4910.37,-378.45"/>
-<text text-anchor="middle" x="4921.84" y="-389.76" font-family="Times,serif" font-size="14.00">&gt;=1</text>
+<text text-anchor="middle" x="4935.34" y="-389.76" font-family="Times,serif" font-size="14.00">&gt;=1.0.1</text>
 </g>
 <!-- pytest&#45;&gt;pluggy -->
 <g id="edge64" class="edge">
@@ -1047,9 +1047,9 @@
 <!-- pytest&#45;&gt;pygments -->
 <g id="edge65" class="edge">
 <title>pytest&#45;&gt;pygments</title>
-<path fill="none" stroke="black" d="M4924.6,-425.26C4947.66,-409.57 4980.32,-387.35 5006.08,-369.83"/>
-<polygon fill="black" stroke="black" points="5008.23,-372.6 5014.53,-364.08 5004.29,-366.81 5008.23,-372.6"/>
-<text text-anchor="middle" x="5010.34" y="-389.76" font-family="Times,serif" font-size="14.00">&gt;=2.7.2</text>
+<path fill="none" stroke="black" d="M4927.67,-427.06C4940.93,-419.38 4956.35,-410.07 4969.84,-400.96 4983.45,-391.77 4997.88,-381.03 5010.52,-371.25"/>
+<polygon fill="black" stroke="black" points="5012.81,-373.91 5018.55,-365 5008.51,-368.39 5012.81,-373.91"/>
+<text text-anchor="middle" x="5019.34" y="-389.76" font-family="Times,serif" font-size="14.00">&gt;=2.7.2</text>
 </g>
 <!-- pytest&#45;cov -->
 <g id="node73" class="node">
