@@ -266,7 +266,7 @@
 <title>coverage</title>
 <ellipse fill="none" stroke="black" cx="5022.84" cy="-445.83" rx="57.05" ry="26.74"/>
 <text text-anchor="middle" x="5022.84" y="-449.63" font-family="Times,serif" font-size="14.00">coverage</text>
-<text text-anchor="middle" x="5022.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.11.3</text>
+<text text-anchor="middle" x="5022.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.12.0</text>
 </g>
 <!-- cryptography -->
 <g id="node23" class="node">
@@ -588,7 +588,7 @@
 <title>keyring</title>
 <ellipse fill="none" stroke="black" cx="1708.84" cy="-445.83" rx="50.41" ry="26.74"/>
 <text text-anchor="middle" x="1708.84" y="-449.63" font-family="Times,serif" font-size="14.00">keyring</text>
-<text text-anchor="middle" x="1708.84" y="-434.63" font-family="Times,serif" font-size="14.00">25.6.0</text>
+<text text-anchor="middle" x="1708.84" y="-434.63" font-family="Times,serif" font-size="14.00">25.7.0</text>
 </g>
 <!-- keyring&#45;&gt;importlib&#45;metadata -->
 <g id="edge30" class="edge">
@@ -692,7 +692,7 @@
 <title>pbs&#45;installer</title>
 <ellipse fill="none" stroke="black" cx="3082.84" cy="-445.83" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="3082.84" y="-449.63" font-family="Times,serif" font-size="14.00">pbs&#45;installer</text>
-<text text-anchor="middle" x="3082.84" y="-434.63" font-family="Times,serif" font-size="14.00">2025.10.31</text>
+<text text-anchor="middle" x="3082.84" y="-434.63" font-family="Times,serif" font-size="14.00">2025.11.20</text>
 </g>
 <!-- pip -->
 <g id="node57" class="node">
