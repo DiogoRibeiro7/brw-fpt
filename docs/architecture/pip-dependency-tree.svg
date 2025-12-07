@@ -175,7 +175,7 @@
 <title>urllib3</title>
 <ellipse fill="none" stroke="black" cx="1190.3" cy="-236.35" rx="45.01" ry="26.74"/>
 <text text-anchor="middle" x="1190.3" y="-240.15" font-family="Times,serif" font-size="14.00">urllib3</text>
-<text text-anchor="middle" x="1190.3" y="-225.15" font-family="Times,serif" font-size="14.00">2.5.0</text>
+<text text-anchor="middle" x="1190.3" y="-225.15" font-family="Times,serif" font-size="14.00">2.6.0</text>
 </g>
 <!-- requests&#45;&gt;urllib3 -->
 <g id="edge72" class="edge">
@@ -350,7 +350,7 @@
 <title>greenlet</title>
 <ellipse fill="none" stroke="black" cx="1051.3" cy="-236.35" rx="54.39" ry="26.74"/>
 <text text-anchor="middle" x="1051.3" y="-240.15" font-family="Times,serif" font-size="14.00">greenlet</text>
-<text text-anchor="middle" x="1051.3" y="-225.15" font-family="Times,serif" font-size="14.00">3.2.4</text>
+<text text-anchor="middle" x="1051.3" y="-225.15" font-family="Times,serif" font-size="14.00">3.3.0</text>
 </g>
 <!-- sqlalchemy&#45;&gt;greenlet -->
 <g id="edge77" class="edge">
@@ -392,7 +392,7 @@
 <title>platformdirs</title>
 <ellipse fill="none" stroke="black" cx="2935.3" cy="-341.09" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="2935.3" y="-344.89" font-family="Times,serif" font-size="14.00">platformdirs</text>
-<text text-anchor="middle" x="2935.3" y="-329.89" font-family="Times,serif" font-size="14.00">4.5.0</text>
+<text text-anchor="middle" x="2935.3" y="-329.89" font-family="Times,serif" font-size="14.00">4.5.1</text>
 </g>
 <!-- findpython&#45;&gt;platformdirs -->
 <g id="edge16" class="edge">
@@ -678,7 +678,7 @@
 <title>pbs&#45;installer</title>
 <ellipse fill="none" stroke="black" cx="2691.3" cy="-445.83" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="2691.3" y="-449.63" font-family="Times,serif" font-size="14.00">pbs&#45;installer</text>
-<text text-anchor="middle" x="2691.3" y="-434.63" font-family="Times,serif" font-size="14.00">2025.11.20</text>
+<text text-anchor="middle" x="2691.3" y="-434.63" font-family="Times,serif" font-size="14.00">2025.12.5</text>
 </g>
 <!-- pip -->
 <g id="node56" class="node">
@@ -874,7 +874,7 @@
 <title>trove&#45;classifiers</title>
 <ellipse fill="none" stroke="black" cx="3564.3" cy="-445.83" rx="91.85" ry="26.74"/>
 <text text-anchor="middle" x="3564.3" y="-449.63" font-family="Times,serif" font-size="14.00">trove&#45;classifiers</text>
-<text text-anchor="middle" x="3564.3" y="-434.63" font-family="Times,serif" font-size="14.00">2025.11.14.15</text>
+<text text-anchor="middle" x="3564.3" y="-434.63" font-family="Times,serif" font-size="14.00">2025.12.1.14</text>
 </g>
 <!-- poetry&#45;&gt;trove&#45;classifiers -->
 <g id="edge52" class="edge">
@@ -1007,7 +1007,7 @@
 <title>pytest</title>
 <ellipse fill="none" stroke="black" cx="4878.3" cy="-445.83" rx="43.68" ry="26.74"/>
 <text text-anchor="middle" x="4878.3" y="-449.63" font-family="Times,serif" font-size="14.00">pytest</text>
-<text text-anchor="middle" x="4878.3" y="-434.63" font-family="Times,serif" font-size="14.00">9.0.1</text>
+<text text-anchor="middle" x="4878.3" y="-434.63" font-family="Times,serif" font-size="14.00">9.0.2</text>
 </g>
 <!-- pytest&#45;&gt;packaging -->
 <g id="edge62" class="edge">
