@@ -175,7 +175,7 @@
 <title>urllib3</title>
 <ellipse fill="none" stroke="black" cx="1190.3" cy="-236.35" rx="45.01" ry="26.74"/>
 <text text-anchor="middle" x="1190.3" y="-240.15" font-family="Times,serif" font-size="14.00">urllib3</text>
-<text text-anchor="middle" x="1190.3" y="-225.15" font-family="Times,serif" font-size="14.00">2.6.0</text>
+<text text-anchor="middle" x="1190.3" y="-225.15" font-family="Times,serif" font-size="14.00">2.6.2</text>
 </g>
 <!-- requests&#45;&gt;urllib3 -->
 <g id="edge72" class="edge">
@@ -252,7 +252,7 @@
 <title>coverage</title>
 <ellipse fill="none" stroke="black" cx="4759.3" cy="-445.83" rx="57.05" ry="26.74"/>
 <text text-anchor="middle" x="4759.3" y="-449.63" font-family="Times,serif" font-size="14.00">coverage</text>
-<text text-anchor="middle" x="4759.3" y="-434.63" font-family="Times,serif" font-size="14.00">7.12.0</text>
+<text text-anchor="middle" x="4759.3" y="-434.63" font-family="Times,serif" font-size="14.00">7.13.0</text>
 </g>
 <!-- cryptography -->
 <g id="node22" class="node">
@@ -315,7 +315,7 @@
 <title>sqlalchemy</title>
 <ellipse fill="none" stroke="black" cx="980.3" cy="-341.09" rx="68.68" ry="26.74"/>
 <text text-anchor="middle" x="980.3" y="-344.89" font-family="Times,serif" font-size="14.00">sqlalchemy</text>
-<text text-anchor="middle" x="980.3" y="-329.89" font-family="Times,serif" font-size="14.00">2.0.44</text>
+<text text-anchor="middle" x="980.3" y="-329.89" font-family="Times,serif" font-size="14.00">2.0.45</text>
 </g>
 <!-- eralchemy2&#45;&gt;sqlalchemy -->
 <g id="edge13" class="edge">
