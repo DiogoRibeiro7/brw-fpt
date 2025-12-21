@@ -371,7 +371,7 @@
 <title>filelock</title>
 <ellipse fill="none" stroke="black" cx="2302.3" cy="-341.09" rx="47.25" ry="26.74"/>
 <text text-anchor="middle" x="2302.3" y="-344.89" font-family="Times,serif" font-size="14.00">filelock</text>
-<text text-anchor="middle" x="2302.3" y="-329.89" font-family="Times,serif" font-size="14.00">3.20.0</text>
+<text text-anchor="middle" x="2302.3" y="-329.89" font-family="Times,serif" font-size="14.00">3.20.1</text>
 </g>
 <!-- findpython -->
 <g id="node32" class="node">
@@ -678,7 +678,7 @@
 <title>pbs&#45;installer</title>
 <ellipse fill="none" stroke="black" cx="2691.3" cy="-445.83" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="2691.3" y="-449.63" font-family="Times,serif" font-size="14.00">pbs&#45;installer</text>
-<text text-anchor="middle" x="2691.3" y="-434.63" font-family="Times,serif" font-size="14.00">2025.12.5</text>
+<text text-anchor="middle" x="2691.3" y="-434.63" font-family="Times,serif" font-size="14.00">2025.12.17</text>
 </g>
 <!-- pip -->
 <g id="node56" class="node">
