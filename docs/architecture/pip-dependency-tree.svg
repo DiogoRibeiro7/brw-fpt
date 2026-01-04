@@ -252,7 +252,7 @@
 <title>coverage</title>
 <ellipse fill="none" stroke="black" cx="4785.84" cy="-445.83" rx="57.05" ry="26.74"/>
 <text text-anchor="middle" x="4785.84" y="-449.63" font-family="Times,serif" font-size="14.00">coverage</text>
-<text text-anchor="middle" x="4785.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.13.0</text>
+<text text-anchor="middle" x="4785.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.13.1</text>
 </g>
 <!-- cryptography -->
 <g id="node22" class="node">
@@ -371,7 +371,7 @@
 <title>filelock</title>
 <ellipse fill="none" stroke="black" cx="2966.84" cy="-341.09" rx="47.25" ry="26.74"/>
 <text text-anchor="middle" x="2966.84" y="-344.89" font-family="Times,serif" font-size="14.00">filelock</text>
-<text text-anchor="middle" x="2966.84" y="-329.89" font-family="Times,serif" font-size="14.00">3.20.1</text>
+<text text-anchor="middle" x="2966.84" y="-329.89" font-family="Times,serif" font-size="14.00">3.20.2</text>
 </g>
 <!-- findpython -->
 <g id="node32" class="node">
