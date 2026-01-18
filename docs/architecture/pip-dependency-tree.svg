@@ -539,7 +539,7 @@
 <title>jaraco&#45;context</title>
 <ellipse fill="none" stroke="black" cx="5099.84" cy="-550.57" rx="83.38" ry="26.74"/>
 <text text-anchor="middle" x="5099.84" y="-554.37" font-family="Times,serif" font-size="14.00">jaraco&#45;context</text>
-<text text-anchor="middle" x="5099.84" y="-539.37" font-family="Times,serif" font-size="14.00">6.0.2</text>
+<text text-anchor="middle" x="5099.84" y="-539.37" font-family="Times,serif" font-size="14.00">6.1.0</text>
 </g>
 <!-- jaraco&#45;context&#45;&gt;backports.tarfile -->
 <g id="edge25" class="edge">
@@ -866,7 +866,7 @@
 <title>tomlkit</title>
 <ellipse fill="none" stroke="black" cx="3973.84" cy="-445.83" rx="48.17" ry="26.74"/>
 <text text-anchor="middle" x="3973.84" y="-449.63" font-family="Times,serif" font-size="14.00">tomlkit</text>
-<text text-anchor="middle" x="3973.84" y="-434.63" font-family="Times,serif" font-size="14.00">0.13.3</text>
+<text text-anchor="middle" x="3973.84" y="-434.63" font-family="Times,serif" font-size="14.00">0.14.0</text>
 </g>
 <!-- poetry&#45;&gt;tomlkit -->
 <g id="edge51" class="edge">
@@ -880,7 +880,7 @@
 <title>trove&#45;classifiers</title>
 <ellipse fill="none" stroke="black" cx="3686.84" cy="-445.83" rx="91.85" ry="26.74"/>
 <text text-anchor="middle" x="3686.84" y="-449.63" font-family="Times,serif" font-size="14.00">trove&#45;classifiers</text>
-<text text-anchor="middle" x="3686.84" y="-434.63" font-family="Times,serif" font-size="14.00">2025.12.1.14</text>
+<text text-anchor="middle" x="3686.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.1.14.14</text>
 </g>
 <!-- poetry&#45;&gt;trove&#45;classifiers -->
 <g id="edge52" class="edge">
