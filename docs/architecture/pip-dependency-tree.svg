@@ -252,14 +252,14 @@
 <title>coverage</title>
 <ellipse fill="none" stroke="black" cx="4777.84" cy="-445.83" rx="57.05" ry="26.74"/>
 <text text-anchor="middle" x="4777.84" y="-449.63" font-family="Times,serif" font-size="14.00">coverage</text>
-<text text-anchor="middle" x="4777.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.13.1</text>
+<text text-anchor="middle" x="4777.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.13.2</text>
 </g>
 <!-- cryptography -->
 <g id="node22" class="node">
 <title>cryptography</title>
 <ellipse fill="none" stroke="black" cx="2020.84" cy="-236.35" rx="79.81" ry="26.74"/>
 <text text-anchor="middle" x="2020.84" y="-240.15" font-family="Times,serif" font-size="14.00">cryptography</text>
-<text text-anchor="middle" x="2020.84" y="-225.15" font-family="Times,serif" font-size="14.00">46.0.3</text>
+<text text-anchor="middle" x="2020.84" y="-225.15" font-family="Times,serif" font-size="14.00">46.0.4</text>
 </g>
 <!-- cryptography&#45;&gt;cffi -->
 <g id="edge10" class="edge">
@@ -684,14 +684,14 @@
 <title>pbs&#45;installer</title>
 <ellipse fill="none" stroke="black" cx="2913.84" cy="-445.83" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="2913.84" y="-449.63" font-family="Times,serif" font-size="14.00">pbs&#45;installer</text>
-<text text-anchor="middle" x="2913.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.1.14</text>
+<text text-anchor="middle" x="2913.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.1.27</text>
 </g>
 <!-- pip -->
 <g id="node57" class="node">
 <title>pip</title>
 <ellipse fill="none" stroke="black" cx="5544.84" cy="-550.57" rx="33.88" ry="26.74"/>
 <text text-anchor="middle" x="5544.84" y="-554.37" font-family="Times,serif" font-size="14.00">pip</text>
-<text text-anchor="middle" x="5544.84" y="-539.37" font-family="Times,serif" font-size="14.00">25.3</text>
+<text text-anchor="middle" x="5544.84" y="-539.37" font-family="Times,serif" font-size="14.00">26.0</text>
 </g>
 <!-- pipdeptree -->
 <g id="node58" class="node">
