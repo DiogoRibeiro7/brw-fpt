@@ -252,14 +252,14 @@
 <title>coverage</title>
 <ellipse fill="none" stroke="black" cx="4777.84" cy="-445.83" rx="57.05" ry="26.74"/>
 <text text-anchor="middle" x="4777.84" y="-449.63" font-family="Times,serif" font-size="14.00">coverage</text>
-<text text-anchor="middle" x="4777.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.13.3</text>
+<text text-anchor="middle" x="4777.84" y="-434.63" font-family="Times,serif" font-size="14.00">7.13.4</text>
 </g>
 <!-- cryptography -->
 <g id="node22" class="node">
 <title>cryptography</title>
 <ellipse fill="none" stroke="black" cx="2020.84" cy="-236.35" rx="79.81" ry="26.74"/>
 <text text-anchor="middle" x="2020.84" y="-240.15" font-family="Times,serif" font-size="14.00">cryptography</text>
-<text text-anchor="middle" x="2020.84" y="-225.15" font-family="Times,serif" font-size="14.00">46.0.4</text>
+<text text-anchor="middle" x="2020.84" y="-225.15" font-family="Times,serif" font-size="14.00">46.0.5</text>
 </g>
 <!-- cryptography&#45;&gt;cffi -->
 <g id="edge10" class="edge">
@@ -371,7 +371,7 @@
 <title>filelock</title>
 <ellipse fill="none" stroke="black" cx="2960.84" cy="-341.09" rx="47.25" ry="26.74"/>
 <text text-anchor="middle" x="2960.84" y="-344.89" font-family="Times,serif" font-size="14.00">filelock</text>
-<text text-anchor="middle" x="2960.84" y="-329.89" font-family="Times,serif" font-size="14.00">3.20.3</text>
+<text text-anchor="middle" x="2960.84" y="-329.89" font-family="Times,serif" font-size="14.00">3.24.0</text>
 </g>
 <!-- findpython -->
 <g id="node32" class="node">
@@ -392,7 +392,7 @@
 <title>platformdirs</title>
 <ellipse fill="none" stroke="black" cx="3700.84" cy="-341.09" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="3700.84" y="-344.89" font-family="Times,serif" font-size="14.00">platformdirs</text>
-<text text-anchor="middle" x="3700.84" y="-329.89" font-family="Times,serif" font-size="14.00">4.5.1</text>
+<text text-anchor="middle" x="3700.84" y="-329.89" font-family="Times,serif" font-size="14.00">4.9.1</text>
 </g>
 <!-- findpython&#45;&gt;platformdirs -->
 <g id="edge16" class="edge">
@@ -684,7 +684,7 @@
 <title>pbs&#45;installer</title>
 <ellipse fill="none" stroke="black" cx="2913.84" cy="-445.83" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="2913.84" y="-449.63" font-family="Times,serif" font-size="14.00">pbs&#45;installer</text>
-<text text-anchor="middle" x="2913.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.2.3</text>
+<text text-anchor="middle" x="2913.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.2.11</text>
 </g>
 <!-- pip -->
 <g id="node57" class="node">
