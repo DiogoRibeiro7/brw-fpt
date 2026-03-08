@@ -161,7 +161,7 @@
 <title>charset&#45;normalizer</title>
 <ellipse fill="none" stroke="black" cx="846.84" cy="-236.35" rx="107.46" ry="26.74"/>
 <text text-anchor="middle" x="846.84" y="-240.15" font-family="Times,serif" font-size="14.00">charset&#45;normalizer</text>
-<text text-anchor="middle" x="846.84" y="-225.15" font-family="Times,serif" font-size="14.00">3.4.4</text>
+<text text-anchor="middle" x="846.84" y="-225.15" font-family="Times,serif" font-size="14.00">3.4.5</text>
 </g>
 <!-- requests&#45;&gt;charset&#45;normalizer -->
 <g id="edge72" class="edge">
@@ -315,7 +315,7 @@
 <title>sqlalchemy</title>
 <ellipse fill="none" stroke="black" cx="517.84" cy="-341.09" rx="68.68" ry="26.74"/>
 <text text-anchor="middle" x="517.84" y="-344.89" font-family="Times,serif" font-size="14.00">sqlalchemy</text>
-<text text-anchor="middle" x="517.84" y="-329.89" font-family="Times,serif" font-size="14.00">2.0.47</text>
+<text text-anchor="middle" x="517.84" y="-329.89" font-family="Times,serif" font-size="14.00">2.0.48</text>
 </g>
 <!-- eralchemy2&#45;&gt;sqlalchemy -->
 <g id="edge13" class="edge">
@@ -371,7 +371,7 @@
 <title>filelock</title>
 <ellipse fill="none" stroke="black" cx="3384.84" cy="-236.35" rx="47.25" ry="26.74"/>
 <text text-anchor="middle" x="3384.84" y="-240.15" font-family="Times,serif" font-size="14.00">filelock</text>
-<text text-anchor="middle" x="3384.84" y="-225.15" font-family="Times,serif" font-size="14.00">3.24.3</text>
+<text text-anchor="middle" x="3384.84" y="-225.15" font-family="Times,serif" font-size="14.00">3.25.0</text>
 </g>
 <!-- findpython -->
 <g id="node32" class="node">
@@ -392,7 +392,7 @@
 <title>platformdirs</title>
 <ellipse fill="none" stroke="black" cx="3150.84" cy="-236.35" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="3150.84" y="-240.15" font-family="Times,serif" font-size="14.00">platformdirs</text>
-<text text-anchor="middle" x="3150.84" y="-225.15" font-family="Times,serif" font-size="14.00">4.9.2</text>
+<text text-anchor="middle" x="3150.84" y="-225.15" font-family="Times,serif" font-size="14.00">4.9.4</text>
 </g>
 <!-- findpython&#45;&gt;platformdirs -->
 <g id="edge16" class="edge">
@@ -539,7 +539,7 @@
 <title>jaraco&#45;context</title>
 <ellipse fill="none" stroke="black" cx="4898.84" cy="-550.57" rx="83.38" ry="26.74"/>
 <text text-anchor="middle" x="4898.84" y="-554.37" font-family="Times,serif" font-size="14.00">jaraco&#45;context</text>
-<text text-anchor="middle" x="4898.84" y="-539.37" font-family="Times,serif" font-size="14.00">6.1.0</text>
+<text text-anchor="middle" x="4898.84" y="-539.37" font-family="Times,serif" font-size="14.00">6.1.1</text>
 </g>
 <!-- jaraco&#45;context&#45;&gt;backports.tarfile -->
 <g id="edge25" class="edge">
@@ -684,7 +684,7 @@
 <title>pbs&#45;installer</title>
 <ellipse fill="none" stroke="black" cx="1249.84" cy="-445.83" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="1249.84" y="-449.63" font-family="Times,serif" font-size="14.00">pbs&#45;installer</text>
-<text text-anchor="middle" x="1249.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.2.11</text>
+<text text-anchor="middle" x="1249.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.3.3</text>
 </g>
 <!-- pip -->
 <g id="node57" class="node">
@@ -936,7 +936,7 @@
 <title>python&#45;discovery</title>
 <ellipse fill="none" stroke="black" cx="3150.84" cy="-341.09" rx="98.08" ry="26.74"/>
 <text text-anchor="middle" x="3150.84" y="-344.89" font-family="Times,serif" font-size="14.00">python&#45;discovery</text>
-<text text-anchor="middle" x="3150.84" y="-329.89" font-family="Times,serif" font-size="14.00">1.1.0</text>
+<text text-anchor="middle" x="3150.84" y="-329.89" font-family="Times,serif" font-size="14.00">1.1.1</text>
 </g>
 <!-- virtualenv&#45;&gt;python&#45;discovery -->
 <g id="edge84" class="edge">
