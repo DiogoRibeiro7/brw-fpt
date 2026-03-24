@@ -11,10 +11,10 @@ keywords = ["branching-random-walk", "large-deviations", "rare-events", "importa
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Mathematics"
@@ -23,7 +23,7 @@ packages = [{ include = "brwfpt", from = "src" }]
 
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.14"
+python = ">=3.10,<3.14"
 numpy = "^2.4.3"
 
 
