@@ -83,7 +83,7 @@
 <text text-anchor="start" x="1132.5" y="-91.3" font-family="Times,serif" font-size="14.00">_speed</text>
 <text text-anchor="start" x="1132.5" y="-76.3" font-family="Times,serif" font-size="14.00">lam_hat</text>
 <text text-anchor="start" x="1132.5" y="-61.3" font-family="Times,serif" font-size="14.00">rng</text>
-<text text-anchor="start" x="1132.5" y="-46.3" font-family="Times,serif" font-size="14.00">_sb_cum</text>
+<text text-anchor="start" x="1132.5" y="-46.3" font-family="Times,serif" font-size="14.00">_cholesky_L</text>
 <polyline fill="none" stroke="black" points="1124.5,-38.5 1299.5,-38.5 "/>
 <text text-anchor="start" x="1132.5" y="-23.3" font-family="Times,serif" font-size="14.00">estimate_cdf</text>
 <text text-anchor="start" x="1132.5" y="-8.3" font-family="Times,serif" font-size="14.00">estimate_window_pmf</text>
