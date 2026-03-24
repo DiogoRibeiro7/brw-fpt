@@ -475,6 +475,9 @@ class SpineISEstimator:
         self.lam_hat = self._speed.lam_star_for_c1_u
         self.rng = self.config.rng or np.random.default_rng()
 
+        # Precompute Cholesky factor for tilted sampling (avoids recomputing per step)
+        self._cholesky_L = np.linalg.cholesky(self.jumps.Sigma)
+
         # Build size-biased offspring CDF once
         sb = self.offspring.support * self.offspring.p
         tot = sb.sum()
@@ -494,8 +497,12 @@ class SpineISEstimator:
         for t in range(self.config.K_bias):
             n_target = max(n0 - t, 0)
             for _ in range(self.config.max_replications):
-                z = self._single_replication_Z_eq_time(x, n_target)
-                estimates.append(z)
+                if self.config.antithetic:
+                    z1 = self._single_replication_Z_eq_time(x, n_target, negate_z=False)
+                    z2 = self._single_replication_Z_eq_time(x, n_target, negate_z=True)
+                    estimates.append(0.5 * (z1 + z2))
+                else:
+                    estimates.append(self._single_replication_Z_eq_time(x, n_target))
         arr = np.asarray(estimates, dtype=np.float64)
         prob_hat = float(np.mean(arr))
         stderr = float(np.std(arr, ddof=1) / math.sqrt(arr.size)) if arr.size > 1 else float("nan")
@@ -513,7 +520,14 @@ class SpineISEstimator:
         out: Dict[int, Tuple[float, float, int]] = {}
         for t in range(self.config.K_bias):
             n_target = max(n0 - t, 0)
-            vals = [self._single_replication_Z_eq_time(x, n_target) for _ in range(self.config.max_replications)]
+            if self.config.antithetic:
+                vals = [
+                    0.5 * (self._single_replication_Z_eq_time(x, n_target, negate_z=False)
+                           + self._single_replication_Z_eq_time(x, n_target, negate_z=True))
+                    for _ in range(self.config.max_replications)
+                ]
+            else:
+                vals = [self._single_replication_Z_eq_time(x, n_target) for _ in range(self.config.max_replications)]
             arr = np.asarray(vals, dtype=np.float64)
             p_hat = float(np.mean(arr))
             se = float(np.std(arr, ddof=1) / math.sqrt(arr.size)) if arr.size > 1 else float("nan")
@@ -539,9 +553,12 @@ class SpineISEstimator:
         dif = positions - center
         return bool(np.any(np.einsum("ij,ij->i", dif, dif) <= self.r * self.r))
 
-    def _single_replication_Z_eq_time(self, x: float, n: int) -> float:
+    def _single_replication_Z_eq_time(self, x: float, n: int, negate_z: bool = False) -> float:
         """
         One IS replication for exact-time event {τ_x = n} under the Q measure.
+
+        Args:
+            negate_z: If True, negate the standard-normal innovations (antithetic pair).
 
         Returns:
             Non-negative estimator Z with E_Q[Z] = P(τ_x = n).
@@ -569,18 +586,15 @@ class SpineISEstimator:
             # Size-biased offspring at spine
             spine_children = self._size_biased_offspring()
 
-            # Tilted jumps for children (optionally with antithetic)
-            if not self.config.antithetic:
+            # Tilted jumps for children
+            if not negate_z:
                 child_jumps = self.jumps.sample_tilted(self.lam_hat, size=spine_children, rng=self.rng)
             else:
-                # Build antithetic pairs for tilted sampling:
+                # Antithetic: negate the standard-normal innovations
                 mu_tilt = self.jumps.mu + self.jumps.Sigma @ self.lam_hat
                 z = self.rng.standard_normal((spine_children, d))
-                # For spherical/elliptical normal: use Cholesky of Sigma
-                Lchol = np.linalg.cholesky(self.jumps.Sigma)
-                z = z @ Lchol.T
+                z = (-z) @ self._cholesky_L.T
                 child_jumps = mu_tilt + z
-                # Antithetic symmetry achieved via z and -z for even counts automatically in expectation.
 
             spine_idx = self._spine_child_index(child_jumps)
             spine_jump = child_jumps[spine_idx]
