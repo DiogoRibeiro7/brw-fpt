@@ -21,7 +21,6 @@ from dataclasses import dataclass
 from typing import Callable, Dict, Iterable, List, Optional, Tuple, Union
 
 import numpy as np
-np.set_printoptions(suppress=True, precision=6)
 
 ArrayLike = Union[np.ndarray, List[float], Tuple[float, ...]]
 
@@ -36,6 +35,38 @@ def _as_1d(v: ArrayLike) -> np.ndarray:
     if a.ndim != 1:
         raise ValueError("Expected a 1D array-like.")
     return a
+
+def _normal_quantile(p: float) -> float:
+    """Inverse standard-normal CDF via Acklam's rational approximation.
+
+    Accurate to ~1.15e-9 for 0 < p < 1.  Used instead of scipy so the
+    package stays NumPy-only.
+    """
+    a = (-3.969683028665376e+01, 2.209460984245205e+02,
+         -2.759285104469687e+02, 1.383577518672690e+02,
+         -3.066479806614716e+01, 2.506628277459239e+00)
+    b = (-5.447609879822406e+01, 1.615858368580409e+02,
+         -1.556989798598866e+02, 6.680131188771972e+01,
+         -1.328068155288572e+01)
+    c = (-7.784894002430293e-03, -3.223964580411365e-01,
+         -2.400758277161838e+00, -2.549732539343734e+00,
+          4.374664141464968e+00, 2.938163982698783e+00)
+    d = (7.784695709041462e-03, 3.224671290700398e-01,
+         2.445134137142996e+00, 3.754408661907416e+00)
+    p_low = 0.02425
+    if p < p_low:
+        q = math.sqrt(-2.0 * math.log(p))
+        return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / \
+               ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1.0)
+    if p > 1.0 - p_low:
+        q = math.sqrt(-2.0 * math.log(1.0 - p))
+        return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / \
+                ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1.0)
+    q = p - 0.5
+    r = q * q
+    return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q / \
+           (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1.0)
+
 
 def _ensure_positive(x: float, name: str) -> None:
     if not (x > 0):
@@ -631,8 +662,9 @@ def bernstein_ci(samples: ArrayLike, alpha: float = 0.05, value_range: Optional[
     v = float(np.var(x, ddof=1))
     z = math.log(2.0 / max(1e-16, alpha))
     if value_range is None:
-        # Normal CI as a safe default
-        half = 1.96 * math.sqrt(v / n)
+        # Two-sided z-quantile: Phi^{-1}(1 - alpha/2)
+        z_val = _normal_quantile(1.0 - alpha / 2.0)
+        half = z_val * math.sqrt(v / n)
         return (m - half, m + half)
     a, b = value_range
     rng = max(1e-16, b - a)
@@ -660,7 +692,7 @@ def plan_replications_for_relative_error(
         return 1
     if variance_proxy is None:
         variance_proxy = max(1e-16, p_hat * (1 - min(1.0, p_hat)))  # crude
-    z = 1.96 if abs(alpha - 0.05) < 1e-9 else math.sqrt(2) * math.erfcinv(alpha) * math.sqrt(2)
+    z = _normal_quantile(1.0 - alpha / 2.0)
     target_stderr = target_rel_err * p_hat / z
     N = int(math.ceil(variance_proxy / max(1e-18, target_stderr ** 2)))
     return max(1, N)
