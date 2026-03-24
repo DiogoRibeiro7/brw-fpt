@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout PR branch
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
@@ -28,7 +28,7 @@ jobs:
           python-version: '3.11'
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '**/pyproject.toml') }}
@@ -66,7 +66,7 @@ jobs:
           echo "PR benchmarks completed"
 
       - name: Upload PR benchmark results
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: pr-benchmarks
           path: .benchmarks/
@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout base branch
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.base.sha }}
 
@@ -86,7 +86,7 @@ jobs:
           python-version: '3.11'
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '**/pyproject.toml') }}
@@ -120,7 +120,7 @@ jobs:
           echo "Base benchmarks completed"
 
       - name: Upload base benchmark results
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: base-benchmarks
           path: .benchmarks/
@@ -131,7 +131,7 @@ jobs:
     needs: [benchmark-pr, benchmark-base]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -139,13 +139,13 @@ jobs:
           node-version: '20'
 
       - name: Download PR benchmarks
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: pr-benchmarks
           path: ./pr-benchmarks
 
       - name: Download base benchmarks
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: base-benchmarks
           path: ./base-benchmarks
