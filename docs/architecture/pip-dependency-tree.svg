@@ -14,7 +14,7 @@
 <title>anyio</title>
 <ellipse fill="none" stroke="black" cx="318.84" cy="-341.09" rx="43.68" ry="26.74"/>
 <text text-anchor="middle" x="318.84" y="-344.89" font-family="Times,serif" font-size="14.00">anyio</text>
-<text text-anchor="middle" x="318.84" y="-329.89" font-family="Times,serif" font-size="14.00">4.12.1</text>
+<text text-anchor="middle" x="318.84" y="-329.89" font-family="Times,serif" font-size="14.00">4.13.0</text>
 </g>
 <!-- idna -->
 <g id="node2" class="node">
@@ -70,7 +70,7 @@
 <title>build</title>
 <ellipse fill="none" stroke="black" cx="3567.84" cy="-445.83" rx="37.45" ry="26.74"/>
 <text text-anchor="middle" x="3567.84" y="-449.63" font-family="Times,serif" font-size="14.00">build</text>
-<text text-anchor="middle" x="3567.84" y="-434.63" font-family="Times,serif" font-size="14.00">1.4.0</text>
+<text text-anchor="middle" x="3567.84" y="-434.63" font-family="Times,serif" font-size="14.00">1.4.1</text>
 </g>
 <!-- packaging -->
 <g id="node8" class="node">
@@ -684,7 +684,7 @@
 <title>pbs&#45;installer</title>
 <ellipse fill="none" stroke="black" cx="1249.84" cy="-445.83" rx="74.91" ry="26.74"/>
 <text text-anchor="middle" x="1249.84" y="-449.63" font-family="Times,serif" font-size="14.00">pbs&#45;installer</text>
-<text text-anchor="middle" x="1249.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.3.20</text>
+<text text-anchor="middle" x="1249.84" y="-434.63" font-family="Times,serif" font-size="14.00">2026.3.24</text>
 </g>
 <!-- pip -->
 <g id="node57" class="node">
