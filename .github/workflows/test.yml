@@ -22,10 +22,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install numpy scipy matplotlib pytest mypy
+          pip install poetry
+          poetry install
+          pip install mypy
 
       - name: Run mypy (strict)
-        run: mypy --config-file mypy.ini
+        run: mypy --strict src/brwfpt/
 
       - name: Run pytest
         run: pytest
