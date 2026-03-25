@@ -9,7 +9,6 @@ reproducibility. All code is designed to be NumPy-only.
 from __future__ import annotations
 
 
-from typing import Iterator
 import numpy as np
 import pytest
 
@@ -17,9 +16,9 @@ import pytest
 from brwfpt.brw_fpt import GaussianJump, OffspringLaw
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture
 def rng() -> np.random.Generator:
-    """Global RNG for deterministic tests."""
+    """Fresh RNG per test for deterministic, order-independent results."""
     return np.random.default_rng(20250927)
 
 
