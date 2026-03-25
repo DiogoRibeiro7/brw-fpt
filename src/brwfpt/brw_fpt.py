@@ -19,11 +19,11 @@ import math
 import time
 import warnings
 from dataclasses import dataclass
-from typing import Callable, Dict, Iterable, List, Optional, Tuple, Union
+from collections.abc import Iterable
 
 import numpy as np
 
-ArrayLike = Union[np.ndarray, List[float], Tuple[float, ...]]
+ArrayLike = np.ndarray | list[float] | tuple[float, ...]
 
 # -----------------------------------------------------------------------------#
 # Basic utilities
@@ -130,11 +130,11 @@ class GaussianJump:
         v = _as_1d(v)
         return self.Sigma_inv @ (v - self.mu)
 
-    def sample_nominal(self, size: int = 1, rng: Optional[np.random.Generator] = None) -> np.ndarray:
+    def sample_nominal(self, size: int = 1, rng: np.random.Generator | None = None) -> np.ndarray:
         rng = rng or np.random.default_rng()
         return rng.multivariate_normal(self.mu, self.Sigma, size=size)
 
-    def sample_tilted(self, lam: ArrayLike, size: int = 1, rng: Optional[np.random.Generator] = None) -> np.ndarray:
+    def sample_tilted(self, lam: ArrayLike, size: int = 1, rng: np.random.Generator | None = None) -> np.ndarray:
         lam = _as_1d(lam)
         rng = rng or np.random.default_rng()
         mean_tilt = self.mu + self.Sigma @ lam
@@ -167,7 +167,7 @@ class OffspringLaw:
             raise ValueError("Need p0 + p1 > 0.")
         return OffspringLaw(p=p, support=supp, rho=rho, second_moment=k2)
 
-    def sample(self, size: int = 1, rng: Optional[np.random.Generator] = None) -> np.ndarray:
+    def sample(self, size: int = 1, rng: np.random.Generator | None = None) -> np.ndarray:
         rng = rng or np.random.default_rng()
         return rng.choice(self.support, size=size, p=self.p)
 
@@ -231,7 +231,7 @@ class BRWSpeed:
 # FPT to a general ball B_r(x * u)
 # -----------------------------------------------------------------------------#
 
-def fpt_to_ball(positions_by_gen: List[np.ndarray], x: float, u: ArrayLike, r: float) -> Optional[int]:
+def fpt_to_ball(positions_by_gen: list[np.ndarray], x: float, u: ArrayLike, r: float) -> int | None:
     """
     First passage time τ_x to the ball B_r(center), center = x * u (u is unit vector).
 
@@ -261,11 +261,11 @@ class BRWSimulator:
     def simulate_until(
         self,
         n_max: int,
-        x_fpt: Optional[float] = None,
-        u_fpt: Optional[ArrayLike] = None,
+        x_fpt: float | None = None,
+        u_fpt: ArrayLike | None = None,
         r_fpt: float = 1.0,
         max_population: int = 1_000_000,
-    ) -> Tuple[List[np.ndarray], Optional[int]]:
+    ) -> tuple[list[np.ndarray], int | None]:
         """
         Simulate up to generation n_max, optionally stopping when hitting B_r(x*u).
 
@@ -280,7 +280,7 @@ class BRWSimulator:
         if n_max < 0:
             raise ValueError("n_max must be >= 0.")
         d = self.jumps.d
-        positions_by_gen: List[np.ndarray] = [np.zeros((1, d), dtype=np.float64)]
+        positions_by_gen: list[np.ndarray] = [np.zeros((1, d), dtype=np.float64)]
 
         tau_x = None
         if x_fpt is not None and u_fpt is not None:
@@ -464,7 +464,7 @@ class SpineISConfig:
     m_power: float = 1.0/3.0  # window size m = n^{m_power}
     max_replications: int = 2000
     antithetic: bool = False  # use antithetic pairs for tilted jumps along the spine
-    rng: Optional[np.random.Generator] = None
+    rng: np.random.Generator | None = None
 
 @dataclass
 class SpineISEstimator:
@@ -497,13 +497,13 @@ class SpineISEstimator:
 
     # ---------- Public API ---------- #
 
-    def estimate_cdf(self, x: float) -> Dict[str, float]:
+    def estimate_cdf(self, x: float) -> dict[str, float]:
         """
         Estimate P( τ_x <= x/chat ) for B_r(x u) via windowed exact-time masses and IS.
         """
         _ensure_positive(x, "x")
         n0 = int(math.floor(x / self.chat))
-        estimates: List[float] = []
+        estimates: list[float] = []
         for t in range(self.config.K_bias):
             n_target = max(n0 - t, 0)
             for _ in range(self.config.max_replications):
@@ -518,7 +518,7 @@ class SpineISEstimator:
         stderr = float(np.std(arr, ddof=1) / math.sqrt(arr.size)) if arr.size > 1 else float("nan")
         return {"prob_hat": prob_hat, "stderr": stderr, "n_eff": int(arr.size)}
 
-    def estimate_window_pmf(self, x: float) -> Dict[int, Tuple[float, float, int]]:
+    def estimate_window_pmf(self, x: float) -> dict[int, tuple[float, float, int]]:
         """
         Estimate each P(τ_x = n0 - t) separately across t=0..K_bias-1.
 
@@ -527,7 +527,7 @@ class SpineISEstimator:
         """
         _ensure_positive(x, "x")
         n0 = int(math.floor(x / self.chat))
-        out: Dict[int, Tuple[float, float, int]] = {}
+        out: dict[int, tuple[float, float, int]] = {}
         for t in range(self.config.K_bias):
             n_target = max(n0 - t, 0)
             if self.config.antithetic:
@@ -547,16 +547,16 @@ class SpineISEstimator:
     # ---------- Internals ---------- #
 
     def _size_biased_offspring(self) -> int:
-        u = self.rng.random()
-        k = int(np.searchsorted(self._sb_cum, u, side="right"))
+        p = self.rng.random()
+        k = int(np.searchsorted(self._sb_cum, p, side="right"))
         return max(1, k)
 
     def _spine_child_index(self, child_jumps_tilted: np.ndarray) -> int:
         # weights proportional to exp(λ̂·ξ)
         w = np.exp(child_jumps_tilted @ self.lam_hat)
         w_cum = np.cumsum(w / np.sum(w))
-        u = self.rng.random()
-        return int(np.searchsorted(w_cum, u, side="right"))
+        p = self.rng.random()
+        return int(np.searchsorted(w_cum, p, side="right"))
 
     def _is_hit(self, positions: np.ndarray, x: float) -> bool:
         center = self.u * x
@@ -663,7 +663,7 @@ class SpineISEstimator:
 # Bernstein confidence intervals and replication planning
 # -----------------------------------------------------------------------------#
 
-def bernstein_ci(samples: ArrayLike, alpha: float = 0.05, value_range: Optional[Tuple[float, float]] = None) -> Tuple[float, float]:
+def bernstein_ci(samples: ArrayLike, alpha: float = 0.05, value_range: tuple[float, float] | None = None) -> tuple[float, float]:
     """
     Bernstein-style CI for bounded variables (or IS estimates with known bounds).
     If value_range is None, falls back to normal CI using sample variance.
@@ -700,7 +700,7 @@ def plan_replications_for_relative_error(
     p_hat: float,
     target_rel_err: float = 0.2,
     alpha: float = 0.05,
-    variance_proxy: Optional[float] = None,
+    variance_proxy: float | None = None,
 ) -> int:
     """
     Suggest N so that stderr / p_hat <= target_rel_err at (approx.) 1-α confidence.
@@ -735,7 +735,7 @@ def benchmark_small_x(
     mc_trials: int = 300,
     is_trials: int = 1500,
     seed: int = 7,
-) -> Dict[str, Dict[str, float]]:
+) -> dict[str, dict[str, float]]:
     """
     Compare Spine-IS vs crude MC for small x:
       MC estimates P(τ_x <= floor(x/chat)) brute-force (dangerous for large x).
@@ -780,7 +780,7 @@ def sanity_compare_asymptotic(
     r: float = 1.0,
     is_trials: int = 3000,
     seed: int = 123,
-) -> Dict[str, float]:
+) -> dict[str, float]:
     """
     Compare Spine-IS estimate vs Theorem 1 asymptotic at moderately large x.
     """

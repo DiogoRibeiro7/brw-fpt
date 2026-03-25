@@ -21,8 +21,12 @@ from .brw_fpt import (
     SpineISEstimator,
     lower_tail_asymptotics,
     upper_tail_T_value,
+    fpt_to_ball,
+    local_clt_density_gaussian,
     bernstein_ci,
     plan_replications_for_relative_error,
+    benchmark_small_x,
+    sanity_compare_asymptotic,
 )
 
 __all__ = [
@@ -34,8 +38,12 @@ __all__ = [
     "SpineISEstimator",
     "lower_tail_asymptotics",
     "upper_tail_T_value",
+    "fpt_to_ball",
+    "local_clt_density_gaussian",
     "bernstein_ci",
     "plan_replications_for_relative_error",
+    "benchmark_small_x",
+    "sanity_compare_asymptotic",
 ]
 
 __version__ = "0.1.0"
