@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import math
 import time
+import warnings
 from dataclasses import dataclass
 from typing import Callable, Dict, Iterable, List, Optional, Tuple, Union
 
@@ -263,6 +264,7 @@ class BRWSimulator:
         x_fpt: Optional[float] = None,
         u_fpt: Optional[ArrayLike] = None,
         r_fpt: float = 1.0,
+        max_population: int = 1_000_000,
     ) -> Tuple[List[np.ndarray], Optional[int]]:
         """
         Simulate up to generation n_max, optionally stopping when hitting B_r(x*u).
@@ -270,6 +272,7 @@ class BRWSimulator:
         Args:
             n_max: max generation (inclusive)
             x_fpt, u_fpt, r_fpt: optional FPT target (if provided)
+            max_population: stop early if total children in a generation exceeds this
 
         Returns:
             (positions_by_gen, tau_x) where tau_x is None if no hit before/at n_max.
@@ -291,6 +294,13 @@ class BRWSimulator:
             total_children = int(np.sum(K))
             if total_children == 0:
                 positions_by_gen.append(np.zeros((0, d), dtype=np.float64))
+                break
+            if total_children > max_population:
+                warnings.warn(
+                    f"Population ({total_children}) exceeded max_population "
+                    f"({max_population}) at generation {n + 1}; stopping early.",
+                    stacklevel=2,
+                )
                 break
             idxs = np.repeat(np.arange(parents.shape[0]), K)
             pre = parents[idxs]
