@@ -2,7 +2,7 @@
 name = "brwfpt"
 version = "0.1.0"
 description = "Large deviations and spine importance sampling for first-passage times in branching random walks"
-authors = ["Diogo Ribeiro <dfr@esmad.ipp.pytest>"]
+authors = ["Diogo Ribeiro <dfr@esmad.ipp.pt>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/diogoribeiro7/brw-fpt"

@@ -171,16 +171,23 @@ class OffspringLaw:
         rng = rng or np.random.default_rng()
         return rng.choice(self.support, size=size, p=self.p)
 
-    def log_extinction_rate_gamma(self) -> float:
+    def log_extinction_rate_gamma(self, max_iter: int = 10000, tol: float = 1e-12) -> float:
         """γ = -log E[ ζ q^{ζ-1} ], q is the extinction prob (fixed-point of pgf)."""
         def f(q: float) -> float:
             return float(np.dot(self.p, (q ** self.support)))
         q = 1.0
-        for _ in range(10000):
+        converged = False
+        for _ in range(max_iter):
             q_new = f(q)
-            if abs(q_new - q) < 1e-12:
+            if abs(q_new - q) < tol:
+                converged = True
                 break
             q = q_new
+        if not converged:
+            warnings.warn(
+                f"Extinction probability fixed-point did not converge after {max_iter} iterations.",
+                stacklevel=2,
+            )
         q = float(np.clip(q, 0.0, 1.0))
         vals = self.support * self.p * (q ** np.maximum(self.support - 1, 0))
         m = float(np.sum(vals))
@@ -215,14 +222,20 @@ class BRWSpeed:
         qb = -b
         qc = 0.5 * c0 - target
         disc = qb*qb - 4*qa*qc
-        if disc < 0:
-            raise RuntimeError("Negative discriminant while solving for c1; check inputs.")
+        tol = 1e-10 * max(abs(qb*qb), abs(4*qa*qc), 1e-30)
+        if disc < -tol:
+            raise RuntimeError(
+                f"Negative discriminant ({disc:.2e}) while solving for c1; "
+                "log(rho) may be too large for the given Sigma and direction u."
+            )
+        disc = max(disc, 0.0)
         root1 = (-qb + math.sqrt(disc)) / (2 * qa)
         root2 = (-qb - math.sqrt(disc)) / (2 * qa)
         c1 = max(root1, root2)
-        # λ* s.t. grad log mgf(λ) = μ + Σ λ has projection along u equal to c1, and orthogonal components left as μ.
-        # Choose λ parallel to u: λ = alpha * u, μ + Σ (alpha u) projected on u equals c1 -> alpha = (c1 - μ·u)/(u^T Σ u)
+        # λ* s.t. grad log mgf(λ) = μ + Σ λ has projection along u equal to c1
         denom = float(u @ (jumps.Sigma @ u))
+        if denom <= 0:
+            raise ValueError(f"Invalid direction u: u^T Sigma u = {denom} <= 0.")
         alpha = (c1 - float(jumps.mu @ u)) / denom
         lam = alpha * u
         return BRWSpeed(c1=c1, lam_star_for_c1_u=lam)
@@ -438,13 +451,13 @@ def local_clt_density_gaussian(n: int, x_vec: ArrayLike, jumps: GaussianJump) ->
     mean = n * jumps.mu
     cov = n * jumps.Sigma
     cov_inv = jumps.Sigma_inv / n
-    det_cov = float(np.linalg.det(cov))
-    if det_cov <= 0:
+    sign, logdet_cov = np.linalg.slogdet(cov)
+    if sign <= 0:
         raise RuntimeError("Covariance determinant non-positive.")
     diff = x_vec - mean
     quad = float(diff @ (cov_inv @ diff))
-    norm_const = (2 * math.pi) ** (-d / 2) * det_cov ** (-0.5)
-    return norm_const * math.exp(-0.5 * quad)
+    log_norm = -0.5 * (d * math.log(2 * math.pi) + float(logdet_cov))
+    return math.exp(log_norm - 0.5 * quad)
 
 # Placeholder for non-Gaussian extension (plug-in variance-cov, Edgeworth, etc.)
 def local_clt_density_shell(*args, **kwargs) -> float:
