@@ -28,7 +28,7 @@ numpy = "^2.4.3"
 
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.4.2"
+pytest = "^9.0.2"
 
 
 [tool.poetry.scripts]
